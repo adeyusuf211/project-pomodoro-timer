@@ -16,10 +16,16 @@ var pomodoro = {
     document.querySelector("#start").onclick = function () {
       self.startWork.apply(self);
     };
-    document.querySelector("#shortBreak").onclick = function () {
+    document.querySelector("#shortBreak1").onclick = function () {
       self.startShortBreak.apply(self);
     };
-    document.querySelector("#longBreak").onclick = function () {
+    document.querySelector("#longBreak1").onclick = function () {
+      self.startLongBreak.apply(self);
+    };
+    document.querySelector("#shortBreak2").onclick = function () {
+      self.startShortBreak.apply(self);
+    };
+    document.querySelector("#longBreak2").onclick = function () {
       self.startLongBreak.apply(self);
     };
     document.querySelector("#stop").onclick = function () {
@@ -60,6 +66,8 @@ var pomodoro = {
     if (this.seconds == 0) {
       if (this.minutes == 0) {
         this.timerComplete();
+
+        document.getElementById('text').style.display = "block";
 
         const music = new Audio("audio.mp3");
         music.play();
