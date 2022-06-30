@@ -1,3 +1,7 @@
+:root {
+    --bg-color: rgb(88, 88, 255);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,14 +14,79 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(88, 88, 255);
+    background-color: var(--bg-color)
 }
 
-.content {
+.boxs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(207, 207, 207);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+.box span {
+    display: none;
+}
+
+.merah {
+    background-color: red;
+}
+
+.biru {
+    background-color: blue;
+}
+
+.hijau {
+    background-color: green;
+}
+
+.ungu {
+    background-color: purple;
+}
+
+.putih {
+    background-color: white;
+}
+
+.coklat {
+    background-color: chocolate;
+}
+
+.oren {
+    background-color: orange;
+}
+
+.main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+}
+
+.main-content > h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+    display: none;
 }
 
 .buttons {
@@ -25,6 +94,7 @@ body {
     justify-content: space-between;
     width: 100%;
     gap: 10px;
+    margin-top: 20px;
 }
 
 button {
@@ -46,29 +116,20 @@ button:nth-child(2) {
     background-color: rgb(255, 69, 91);
 }
 
-.content .time {
+.main-content .content {
+    display: flex;
+    gap: 20px;
+}
+
+.main-content .time {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     width: 300px;
     height: 300px;
-    border: 6px dotted white;
+    border: 6px double white;
     border-radius: 50%;
-    margin-bottom: 20px;
     color: white;
-}
-
-.content .text {
-    font-size: 8rem;
-    position: absolute;
-    margin: auto 0;
-    color: rgb(59, 59, 255);
-    z-index: -1;
-}
-
-@media screen and (max-width: 700px) {
-    .content .text {
-        font-size: 3rem;
-    }
+    margin: 20px;
 }
